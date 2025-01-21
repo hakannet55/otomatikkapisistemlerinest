@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.app-container {
+  text-align: center;
+}
+
+.header {
+  background-color: #004d99;
+  color: white;
+  padding: 20px 0;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.header p {
+  margin: 5px 0 0;
+  font-size: 1.2rem;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.about,
+.services,
+.contact {
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  color: #004d99;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #e6f2ff;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.footer {
+  background-color: #00264d;
+  color: white;
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
