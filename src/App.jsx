@@ -7,14 +7,15 @@ export default function App() {
   return (
     <div className="app-container">
       <header className="header">
-        <h1>Hoş Geldiniz!</h1>
+        <h1>Çorlu Otomatik Kapı</h1>
         <p>Otomatik Kapı Sistemlerinde Lider Firma</p>
       </header>
       <main className="main-content">
         <section className="about">
           <h2>Hakkımızda</h2>
           <p>
-            Firmamız, yenilikçi ve güvenilir otomatik kapı çözümleri
+            Volkan Kuru: 0542-275-55-59
+            <br /> Firmamız, yenilikçi ve güvenilir otomatik kapı çözümleri
             sunmaktadır. Modern teknolojiyi kullanarak, işletmeniz için mükemmel
             kapı sistemlerini tasarlıyoruz.
           </p>
