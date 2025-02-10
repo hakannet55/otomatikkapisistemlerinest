@@ -1,0 +1,56 @@
+.parallax {
+    background-image: url('https://www.otomatik-kapi.com.tr/wp-content/uploads/2020/05/otomatik-kapi.jpg');
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.parallax::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(10px);
+    z-index: 1;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Arka planı biraz karartarak yazının okunabilirliğini artırır */
+    border-radius: 10px;
+    margin: 20%;
+}
+
+.parallax-content h1 {
+    font-size: 3em;
+    margin: 0 0 20px 0;
+}
+
+.parallax-content p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.parallax-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.parallax-content li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}

@@ -1,45 +1,56 @@
-// Ana bileşeni oluşturacağımız React uygulaması
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
+import { useState } from "react";
+import { Menu } from "lucide-react";
+import KurumsalPage from "./pages/KurumsalPage.jsx";
+import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
+import Iletisim from "./pages/iletisim.jsx";
+import Home from "./pages/Home.jsx";
+import './App.css';
 
 export default function App() {
-  return (
-    <div className="app-container">
-      <header className="header">
-        <h1>Çorlu Otomatik Kapı</h1>
-        <p>Otomatik Kapı Sistemlerinde Lider Firma</p>
-      </header>
-      <main className="main-content">
-        <section className="about">
-          <h2>Hakkımızda</h2>
-          <p>
-            Volkan Kuru: 0542-275-55-59
-            <br /> Firmamız, yenilikçi ve güvenilir otomatik kapı çözümleri
-            sunmaktadır. Modern teknolojiyi kullanarak, işletmeniz için mükemmel
-            kapı sistemlerini tasarlıyoruz.
-          </p>
-        </section>
-        <section className="services">
-          <h2>Hizmetlerimiz</h2>
-          <ul>
-            <li>Fotoselli Kapılar</li>
-            <li>Endüstriyel Kapılar</li>
-            <li>Garaj Kapıları</li>
-            <li>Hızlı Geçiş Sistemleri</li>
-          </ul>
-        </section>
-        <section className="contact">
-          <h2>İletişim</h2>
-          <p>
-            Bizimle iletişime geçmek için:{" "}
-            <a href="mailto:info@otomatik-kapi.com">info@otomatik-kapi.com</a>
-          </p>
-        </section>
-      </main>
-      <footer className="footer">
-        <p>&copy; 2025 Otomatik Kapı Sistemleri. Tüm hakları saklıdır.</p>
-      </footer>
-    </div>
-  );
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    return (
+        <BrowserRouter> {/* BrowserRouter ile uygulamayı sarmalayın */}
+            <div className="font-sans bg-gray-100 min-h-screen">
+                {/* Navbar */}
+                <nav className="bg-blue-900 text-white p-4 flex justify-between items-center shadow-md">
+                    <h1 className="text-2xl font-bold">Çorlu Otomatik Kapı</h1>
+                    <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+                        <Menu size={28} />
+                    </button>
+                    <ul className={`md:flex gap-6 ${menuOpen ? "block absolute top-16 left-0 w-full bg-blue-900 p-4 shadow-md" : "hidden md:flex"}`}>
+                        {['Anasayfa', 'Kurumsal', 'Ürünlerimiz', 'Referanslar', 'İletişim'].map((item, indx) => (
+                            <li key={indx} className="hover:text-blue-300 cursor-pointer">
+                                <Link to={indx !== 0 ? item : '/'}>{item}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+
+                <div>
+                    Alüminyum ve çelik profillerden üretilen otomatik kapılar, dış cephenize uygun renk seçenekleri ile estetiği, sessiz çalışma ve uzaktan kumanda ile kullanım özelliği ile konforu, dış etkilere karşı yüksek mukavemeti ile güvenliği sizlere bir arada sunmaktadır.
+                    Elektrik kesintisi durumunda da manuel olarak kapınızı açıp-kapatabilir, dilerseniz kesintisiz güç kaynağı kullanarak da kapınızı otomatik olarak çalıştırabilir, uzaktan kumanda kullanımı yanında, anahtar veya butonla da kapınızı kontrol edebilirsiniz.
+
+                    Garajınızı ya da işyerinizi , her türlü hava şartlarından, hırsızlık ve zarar verme amaçlı yapılan fiziksel etkilerden korumak için, üstün güvenlik sistemiyle donatılmış, uzun ömürlü, rollmina Garaj Kapısı Sistemlerini güvenle binalarınıza uygulayabilirsiniz.
+                </div>
+
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/Kurumsal" element={<KurumsalPage />} />
+                    <Route path="/İletişim" element={<Iletisim />} />
+                </Routes>
+
+                {/* İletişim */}
+                <section className="p-8 bg-gray-200 text-center">
+                    <h2 className="text-3xl font-semibold text-blue-900 mb-4">İletişim</h2>
+                    <form className="max-w-md mx-auto">
+                        <input type="text" placeholder="Adınız" className="w-full p-2 mb-3 border rounded" />
+                        <input type="email" placeholder="E-posta" className="w-full p-2 mb-3 border rounded" />
+                        <textarea placeholder="Mesajınız" className="w-full p-2 mb-3 border rounded"></textarea>
+                        <button className="bg-blue-900 text-white px-6 py-2 rounded">Gönder</button>
+                    </form>
+                </section>
+            </div>
+        </BrowserRouter>
+    );
 }
