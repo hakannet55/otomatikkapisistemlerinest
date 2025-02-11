@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import App from "./App.jsx";
 import './index.css';
 
-ReactDOM.render(
-    <React.StrictMode>
+import { createRoot } from 'react-dom/client';
 
-            <App/>
-            <footer className="App-footer">
-                    <p>© 2025 Kurumsal Site</p>
-            </footer>
-    </React.StrictMode>,
-    document.getElementById('root')
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+    <React.StrictMode>
+        <App/>
+        <footer className="App-footer">
+            <p>© 2025 Kurumsal Site</p>
+        </footer>
+    </React.StrictMode>
 );

@@ -5,6 +5,8 @@ import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 import Iletisim from "./pages/iletisim.jsx";
 import Home from "./pages/Home.jsx";
 import './App.css';
+import BusinessCard from "./components/BusinessCard.jsx";
+import OtomatikKapiModelleri from "./components/ModelsComponents.jsx";
 
 export default function App() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -26,9 +28,9 @@ export default function App() {
                         ))}
                     </ul>
                 </nav>
-
-
-                <div className="garage-door-info">
+                <div className="garage-door-info shadow2">
+                    <div className="garage-door-info-sub shadow2">
+                        <BusinessCard/>
                     <p>
                         Alüminyum ve çelik profillerden üretilen otomatik kapılar, dış cephenize uygun renk seçenekleri
                         ile estetiği,
@@ -52,8 +54,12 @@ export default function App() {
                         Kapısı Sistemlerini
                         güvenle binalarınıza uygulayabilirsiniz.
                     </p>
+                    </div>
                 </div>
-
+                <div className="shadow" style={{display:"flex",justifyContent:'center',background: 'lightblue'}}>
+                    <OtomatikKapiModelleri/>
+                </div>
+                <br/>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/Kurumsal" element={<KurumsalPage/>}/>

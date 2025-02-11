@@ -8,8 +8,15 @@ export default function Home(){
         </header>
         <ParallaxSection></ParallaxSection>
         {/* Kurumsal */}
-        <section className="borderAnimation p-8 bg-white text-center">
-            <h2 className="text-3xl font-semibold text-blue-900 mb-4">Kurumsal</h2>
+        <section
+            style={{
+                backgroundImage: "url('https://www.cakmakyapipvc.com/upload/otomatikkapi.jpg')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+            }}
+            className="borderAnimation p-8 text-center"
+        ><h2 className="text-3xl font-semibold text-blue-900 mb-4">Kurumsal</h2>
             <p className="text-gray-700 max-w-2xl mx-auto mb-4">
                  Otomatik Kapı olarak yıllardır sektörde öncü firmalar arasında yer almaktayız. Kalite, güvenlik ve müşteri memnuniyetini ön planda tutarak, modern çözümler sunuyoruz.
             </p>
