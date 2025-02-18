@@ -18,7 +18,13 @@
     border-image: linear-gradient(0deg, black, blue, black) 1;
     animation: borderRotate 3s linear infinite;
 }
-
+p{line-height: 1.2 !important;}
+nav li {
+    font-size: 1.1em;
+}
+nav li:hover {
+    border-bottom: 2px solid crimson;
+}
 /* Border animasyonu */
 @keyframes borderAnimation {
     0% {
@@ -38,5 +44,16 @@
     }
     100% {
         border-image: linear-gradient(360deg, black, blue, black) 1;
+    }
+}
+
+.border-bcrimson {
+    border-bottom: 5px solid crimson !important;
+}
+
+@media (max-width: 767px) {
+   nav ul {
+       position: absolute;
+       z-index: 15;
     }
 }
