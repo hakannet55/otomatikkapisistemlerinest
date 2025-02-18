@@ -4,7 +4,7 @@ import './paralax.css';
 
 const ParallaxSection = () => {
     return (
-        <Parallax bgImage="https://doortas.com.tr/wp-content/uploads/2021/05/dorma-fiyat-1024x768.jpeg" strength={500}>
+        <Parallax bgImage="img/bg-123.jpg" strength={500}>
             <div className="bgblur parallax-content">
                 <h1>Fotoselli Kapı Özellikleri</h1>
                 <p>Fotoselli kapılar, bina girişlerinde enerji tasarrufu sağlamak ve güvenliği üst seviyede tutmak amacıyla kullanılır. Aşağıda fotoselli kapıların başlıca özelliklerini bulabilirsiniz:</p>

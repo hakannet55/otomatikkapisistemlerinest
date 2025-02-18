@@ -1,17 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from "./App.jsx";
+import App from './App';
 import './index.css';
 
-import { createRoot } from 'react-dom/client';
-
-const root = createRoot(document.getElementById('root'));
-
-root.render(
+ReactDOM.render(
     <React.StrictMode>
-        <App/>
-        <footer className="App-footer">
-            <p>© 2025 Kurumsal Site</p>
-        </footer>
-    </React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root')
 );
