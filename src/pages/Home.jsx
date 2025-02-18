@@ -3,7 +3,7 @@ import ParallaxSection from "../components/paralax.jsx";
 export default function Home(){
     return (<>
         {/* Hero Bölümü */}
-        <header className="bg-cover bg-center h-[400px] flex items-center justify-center text-white text-4xl font-bold" style={{ backgroundImage: 'url(https://source.unsplash.com/1600x900/?automatic-door)' }}>
+        <header className="bg-cover bg-center h-[400px] flex items-center justify-center text-white text-4xl font-bold" style={{ backgroundImage: 'url(img/images.jpg)' }}>
             <div className="bg-black bg-opacity-50 p-6 rounded-xl">Otomatik Kapıda Güven ve Kalite</div>
         </header>
         <ParallaxSection></ParallaxSection>
