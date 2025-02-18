@@ -1,13 +1,16 @@
 {
   "name": "otomatikkapisistem-app",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npx tailwindcss -i ./src/index.css -o ./dist/output.css --minify",
     "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.17",
