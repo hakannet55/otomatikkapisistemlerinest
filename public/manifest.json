@@ -1,0 +1,11 @@
+{
+  "name": "Çorlu Otomatik Kapı Geçiş Sistemleri",
+  "short_name": "Çorlu Kapı",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "description": "Çorlu Otomatik Kapı Geçiş Sistemleri - Otomatik Kapı, Kepenk, Garaj Kapıları ve daha fazlası.",
+  "icons": [],
+  "lang": "tr-TR"
+}

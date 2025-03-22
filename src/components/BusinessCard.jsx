@@ -11,15 +11,8 @@ const BusinessCard = () => {
                         <h2 className="font-bold text-2xl mb-4 name border-bcrimson">Çorlu Tekirdağ Bölgesi Otomatik Kapı ve Fabrika
                             Kapıları</h2>
                         <p className="text-2xl">
-                            Çorlu Tekirdağ bölgesinde otomatik kapı ve fabrika kapıları konusunda uzmanız.
-                            Müşterilerimize en yüksek kalitede otomatik geçiş sistemleri sunmaktayız.
-                            Ürün yelpazemiz, endüstriyel tesislerde, ticari alanlarda ve konutlarda güvenliği ve
-                            işlevselliği artırmak için tasarlanmış çeşitli otomatik kapıları
-                            ve geçiş sistemlerini içermektedir. Modern teknolojiyle donatılmış otomatik kapılarımız,
-                            enerji verimliliği ve dayanıklılık sağlarken, estetik açıdan da
-                            her türlü mimari yapıya uyum sağlar. Profesyonel ekibimiz, ihtiyaçlarınıza en uygun
-                            çözümleri sunmak için her zaman hazırdır. Bizimle çalışarak,
-                            güvenli, pratik ve şık kapı sistemlerine sahip olabilirsiniz.
+                            Çorlu Tekirdağ bölgesinde otomatik kapı ve fabrika kapıları konusunda uzmanız. Müşterilerimize yüksek kaliteli, enerji verimli ve dayanıklı otomatik geçiş sistemleri sunuyoruz. Ürünlerimiz, endüstriyel tesisler, ticari alanlar ve konutlar için tasarlanmıştır. Modern teknolojili kapılarımız estetik açıdan her türlü mimariye uyum sağlar. Profesyonel ekibimiz ihtiyaçlarınıza en uygun çözümleri sunmak için hazırdır. Güvenli, pratik ve şık kapı sistemleri için bize ulaşın.
+
                         </p>
                     </section>
                     <p className=" text-center">Çorlu Otomatik Kapı Sistemleri</p>
