@@ -1,5 +1,12 @@
+import './referans.css';
+import Modal from "react-modal";
+import OpenModal from "../components/openmodal.jsx";
+import {useState} from "react";
 
 export default function Referanslar() {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [currentImage, setCurrentImage] = useState('');
+    const [text, setText] = useState('');
     const references = [
         {
             title: "Çorlu Otomatik Kapı Sistemleri",
@@ -23,18 +30,41 @@ export default function Referanslar() {
         },
     ];
 
+    const fingImg=(e)=>{
+         e= e.querySelector('img');
+        return e && e.getAttribute('src');
+    }
+
+    const fingText = (e) => {
+        if(e.classList.contains('wp-main-wrapper-inner')){
+            return e.innerHTML;
+        }
+    }
+
+    const larger = (t) => {
+        const path=fingImg(t.target.parentElement) || fingImg(t.target.parentElement.parentElement)
+        const text=fingText(t.target.parentElement) || fingText(t.target.parentElement.parentElement)
+        setText(text)
+        setCurrentImage(path);
+        setModalIsOpen(true);
+    }
+
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-3xl font-bold mb-4">Referanslar</h1>
-            {references.map((ref, index) => (
-                <div key={index} className="bg-white p-4 rounded-lg shadow-md mb-4 flex items-center">
-                    <img src={ref.imageUrl} alt={ref.title} className="w-32 h-32 object-cover rounded-md mr-4" />
-                    <div>
-                        <h2 className="text-2xl font-semibold mb-2">{ref.title}</h2>
-                        <p>{ref.description}</p>
+        <div>
+            <div className="container mx-auto p-4 flex flex-wrap flex-col content-center">
+                <h1 className="text-3xl font-bold mb-4">Referanslar</h1>
+                {references.map((ref, index) => (
+                    <div key={index} style={{maxWidth: '720px'}}
+                         className="wp-main-wrapper-inner bg-white p-4 rounded-lg shadow-md mb-4 items-center">
+                        <img src={ref.imageUrl} alt={ref.title} className="w-100 h-32 object-cover rounded-md mr-4"/>
+                        <a href='#' onClick={larger}>
+                            <h2 className="text-2xl font-semibold mb-2">{ref.title}</h2>
+                            <p>{ref.description}</p>
+                        </a>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
+            {modalIsOpen && <OpenModal open={modalIsOpen} html={text} ></OpenModal>}
         </div>
     );
 }

@@ -7,26 +7,22 @@ import Home from "./pages/Home.jsx";
 import './App.css';
 import Referanslar from "./pages/Referanslar.jsx";
 import Modal from 'react-modal';
+import OpenModal from "./components/openmodal.jsx";
+import Urunler from "./pages/Urunler.jsx";
 
 Modal.setAppElement('#root');
+
 export default function App() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState('');
 
-    const openModal = (src) => {
-        setCurrentImage(src);
-        setModalIsOpen(true);
-    };
-
-    const closeModal = () => {
-        setModalIsOpen(false);
-    };
 
     useEffect(() => {
         const handleClick = (t) => {
             const a=t.target.parentElement.parentElement.querySelector('img')
-            openModal(a.getAttribute('src'));
+            setCurrentImage(a.getAttribute('src'));
+            setModalIsOpen(true);
         };
 
         const buttons = document.getElementsByClassName('Detaylar');
@@ -66,13 +62,17 @@ export default function App() {
                     <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
                         <Menu size={40}/>
                     </button>
-                    <ul className={`md:flex gap-6 ${menuOpen ? "block absolute top-16 left-0 w-full bg-blue-900 p-4 shadow-md" : "hidden md:flex"}`}>
-                        {['Anasayfa', 'Kurumsal', 'Ürünlerimiz', 'Referanslar', 'İletişim'].map((item, indx) => (
-                            <li key={indx} className="hover:text-blue-300 cursor-pointer">
-                                <Link to={indx !== 0 ? item : '/'}>{item}</Link>
-                            </li>
-                        ))}
-                    </ul>
+                    <nav className="relative">
+                        <ul className={`md:flex gap-6 ${menuOpen ? "block absolute top-16 left-0 w-full bg-blue-900 p-4 shadow-md" : "hidden md:flex"}`}>
+                            {['Anasayfa', 'Ürünlerimiz', 'Referanslar', 'Kurumsal', 'İletişim'].map((item, indx) => (
+                                <li key={indx} className="hover:text-blue-300 cursor-pointer">
+                                    <Link to={indx !== 0 ? item : '/'} aria-label={`Navigate to ${item}`} title={`Navigate to ${item}`}>
+                                        {item}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
                 </nav>
 
                 <Routes>
@@ -80,23 +80,15 @@ export default function App() {
                     <Route path="/Kurumsal" element={<KurumsalPage/>}/>
                     <Route path="/İletişim" element={<Iletisim/>}/>
                     <Route path="/Referanslar" element={<Referanslar/>}/>
+                    <Route path="/Ürünlerimiz" element={<Urunler/>}/>
                 </Routes>
 
                 {/* İletişim */}
             </div>
-            <footer>
-                <p>© 2025 Çorlu Otomatik Kapı Geçiş Sistemleri. Tüm hakları saklıdır.</p>
+            <footer className="bg-blue-900 text-white p-4">
+                <p className="text-center">© 2025 Çorlu Otomatik Kapı Geçiş Sistemleri. Tüm hakları saklıdır.</p>
             </footer>
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                contentLabel="Resim Modal"
-                className="modal"
-                overlayClassName="overlay"
-            >
-                <button onClick={closeModal}>Kapat</button>
-                <img src={currentImage} alt="Modal Content" className="modal-image" />
-            </Modal>
+            {modalIsOpen && <OpenModal open={modalIsOpen} close={()=>setModalIsOpen(false)} img={currentImage} ></OpenModal>}
         </BrowserRouter>
     );
 }

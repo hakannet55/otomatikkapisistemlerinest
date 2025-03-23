@@ -7,10 +7,11 @@ const BusinessCard = () => {
             <div className="business-card flex justify-center">
                 <div className="card-content">
                     <section
+
                         className="contact-info text-xl font flex flex-wrap flex-col items-center justify-center text-center">
                         <h2 className="font-bold text-2xl mb-4 name border-bcrimson">Çorlu Tekirdağ Bölgesi Otomatik Kapı ve Fabrika
                             Kapıları</h2>
-                        <p className="text-2xl">
+                        <p className="text-xl">
                             Çorlu Tekirdağ bölgesinde otomatik kapı ve fabrika kapıları konusunda uzmanız. Müşterilerimize yüksek kaliteli, enerji verimli ve dayanıklı otomatik geçiş sistemleri sunuyoruz. Ürünlerimiz, endüstriyel tesisler, ticari alanlar ve konutlar için tasarlanmıştır. Modern teknolojili kapılarımız estetik açıdan her türlü mimariye uyum sağlar. Profesyonel ekibimiz ihtiyaçlarınıza en uygun çözümleri sunmak için hazırdır. Güvenli, pratik ve şık kapı sistemleri için bize ulaşın.
 
                         </p>

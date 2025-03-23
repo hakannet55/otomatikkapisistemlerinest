@@ -1,6 +1,7 @@
 import ParallaxSection from "../components/paralax.jsx";
 import BusinessCard from "../components/BusinessCard.jsx";
 import OtomatikKapiModelleri from "../components/ModelsComponents.jsx";
+import Referanslar from "./Referanslar.jsx";
 
 export default function Home(){
     return (<>
@@ -86,9 +87,6 @@ export default function Home(){
         </section>
 
         {/* Referanslar */}
-        <section className="p-8 bg-white text-center">
-            <h2 className="text-3xl font-semibold text-blue-900 mb-4">Referanslar</h2>
-            <p className="text-gray-700">Türkiye'nin dört bir yanında birçok projeye imza attık.</p>
-        </section>
+        <Referanslar></Referanslar>
     </>)
 }
