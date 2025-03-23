@@ -38,6 +38,16 @@ export default function App() {
         };
     }, []); // Empty dependency array means this effect runs once on mount and cleanup on unmount
 
+    const selectedNav=(indx)=> {
+        const navItems = document.querySelectorAll('nav li');
+        navItems.forEach((item, index) => {
+            if (index === indx) {
+                item.classList.add('selected');
+            } else {
+                item.classList.remove('selected');
+            }
+        });
+    }
 
     return (
         <BrowserRouter> {/* BrowserRouter ile uygulamayı sarmalayın */}
@@ -62,17 +72,15 @@ export default function App() {
                     <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
                         <Menu size={40}/>
                     </button>
-                    <nav className="relative">
                         <ul className={`md:flex gap-6 ${menuOpen ? "block absolute top-16 left-0 w-full bg-blue-900 p-4 shadow-md" : "hidden md:flex"}`}>
                             {['Anasayfa', 'Ürünlerimiz', 'Referanslar', 'Kurumsal', 'İletişim'].map((item, indx) => (
-                                <li key={indx} className="hover:text-blue-300 cursor-pointer">
+                                <li onClick={()=>selectedNav(indx)} key={indx} className="hover:text-blue-300 cursor-pointer">
                                     <Link to={indx !== 0 ? item : '/'} aria-label={`Navigate to ${item}`} title={`Navigate to ${item}`}>
                                         {item}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
-                    </nav>
                 </nav>
 
                 <Routes>

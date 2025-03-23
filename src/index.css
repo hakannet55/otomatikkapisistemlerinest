@@ -21,10 +21,21 @@
 p{line-height: 1.2 !important;}
 nav li {
     font-size: 1.1em;
+    padding: 3px;
 }
 nav li:hover {
     border-bottom: 2px solid crimson;
 }
+nav li.selected {
+    color: rgba(222, 4, 4, 0.6);
+    background: white;
+    border-bottom: 2px solid #a10022;
+    border-radius: 7px;
+}
+nav li.selected:hover{
+     background: rgba(255, 255, 255, 0.57);
+    color:black;
+ }
 /* Border animasyonu */
 @keyframes borderAnimation {
     0% {
